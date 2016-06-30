@@ -1,0 +1,39 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \ifnum\thepage=1%
+    \includegraphics[width=\paperwidth,height=\paperheight]{beamertitle.png}%
+    %% \fill[color=brown] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+    %% \fill[color=orange] (0,0) rectangle(2.95,1.9);
+    %% \fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+    \fi
+    \ifnum\thepage>1%
+    \fill[c3bigrey,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+% Title page
+\defbeamertemplate*{title page}{c3bi}[1][]
+{ 
+  \vskip4.5cm%
+  \begin{beamercolorbox}[wd=6cm,leftskip=5.5cm,#1]{author}
+    {\LARGE\usebeamerfont{author}\insertshortauthor}%
+  \end{beamercolorbox}
+  \vskip2.5cm%
+  \begin{beamercolorbox}[wd=4.5cm,leftskip=-0.5cm,sep=0cm,#1]{title page header}
+    {\small\usebeamerfont{title}\inserttitle}%
+  \end{beamercolorbox}
+  \vskip0.1cm%
+  \begin{beamercolorbox}[wd=4.5cm,leftskip=-0.5cm,sep=0cm,#1]{date}%
+    {\small\usebeamerfont{author}\insertdate}%
+  \end{beamercolorbox}
+  \vfill
+}
+
+\mode<all>

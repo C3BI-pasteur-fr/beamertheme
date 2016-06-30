@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{C3BI  Beamer  Presentation example}
+\date[YYYY/mm]{Month Year}
+\author[C3BI]{Centre de Bioinformatique, Biostatistiques et Biologie Intégrative \texttt{c3bi@pasteur.fr}}
+
+\usetheme{c3bi}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Section1}
+\section{Section2}
+\section{Section3}
+\section{Section4}
+\section{Section5}
+
+\begin{frame} 
+\frametitle{One title only} 
+\begin{itemize}
+\item Bullet 1;
+\item Bullet 2;
+\item Bullet 3.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame} 
+\frametitle{One title} 
+\framesubtitle{And one subtitle} 
+\begin{theorem}
+  Theorem 1
+\end{theorem} 
+\begin{enumerate} 
+\item<1-| alert@1> First bullet (with alert);
+\item<2-> Second bullet;
+\item<3-> Third bullet; 
+\item<1-> Last bullet (always displayed).
+\end{enumerate}
+\end{frame}
+
+\end{document}

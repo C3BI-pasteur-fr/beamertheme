@@ -1,0 +1,40 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{c3bi}[1][]
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{toc}
+    \begin{tikzpicture}
+      \useasboundingbox[fill=black](0,0) rectangle(\the\paperwidth,1cm);
+      \node[anchor= west, white,font=\small] at (0,0.5){\insertshortauthor};
+      \node[anchor= west, white,font=\small] at (1,0.5){\insertsectionnavigationhorizontal{0.8\paperwidth}{}{}};
+    \end{tikzpicture}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.8cm]{frametitle} 
+    \begin{tikzpicture}
+      \useasboundingbox[fill=c3bidarkgrey](0,0) rectangle(\the\paperwidth,0.8cm);
+      \ifx\insertframesubtitle\@empty%
+          {\node[anchor=west, white,font=\small] at (0,0.4){\insertframetitle};}
+      \else%
+          {\node[anchor= west, white,font=\small] at (0,0.58){\insertframetitle};%
+            \node[anchor= west, white,font=\tiny] at (0,0.20){\insertframesubtitle};}%
+      \fi%
+    \end{tikzpicture}%
+  \end{beamercolorbox}
+}
+
+% Frame footer
+\defbeamertemplate*{footline}{author and page number}{%
+  \ifnum\thepage=1
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.3cm,dp=1ex]{footlinecolor}
+  \end{beamercolorbox}
+  \else
+  \begin{beamercolorbox}[wd=\paperwidth,center]{}
+    \textnormal
+    \inserttitle - \insertshortdate\hfill\insertframenumber/\inserttotalframenumber%
+  \end{beamercolorbox}%
+  \vskip0pt%
+  \fi%
+}
+
+\mode<all>
